@@ -33,8 +33,6 @@ class _ChatScreenState extends State<ChatScreen> {
     super.dispose();
   }
 
-  // Link for api - https://beta.openai.com/account/api-keys
-
   void _sendMessage() {
     ChatMessage message = ChatMessage(text: _controller.text, sender: "user");
 
@@ -48,6 +46,8 @@ class _ChatScreenState extends State<ChatScreen> {
     final request = CompleteReq(
         prompt: message.text, model: kTranslateModelV3, max_tokens: 200);
 
+    // Link for api - https://beta.openai.com/account/api-keys
+    
     _subscription = chatGPT!
         .builder("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",
             orgId: "")
